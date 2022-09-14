@@ -1,20 +1,18 @@
-//
-//  ScrumsView.swift
-//  Scrumdinger
-//
-//  Created by MissSunRise on 2022/9/13.
-//
+/*
+See LICENSE folder for this sample’s licensing information.
+*/
 
-import Foundation
 import SwiftUI
 
 struct ScrumsView: View {
-    //数据源
     let scrums: [DailyScrum]
     
     var body: some View {
         List {
-            
+            ForEach(scrums) { scrum in
+                CardView(scrum: scrum)
+                    .listRowBackground(scrum.theme.mainColor)
+            }
         }
     }
 }
